@@ -16,7 +16,6 @@
  *
  */
 
-var bcrypt = require('bcrypt');
 var validator = require('validator');
 var sanitizer = require('sanitizer');
 var jwt = require('jsonwebtoken');
@@ -60,28 +59,6 @@ module.exports = {
                         return ErrorService.sendError(400, "Email ou mot de passe invalide", req, res);
                     }
 
-                    // Compare password from the form params to the encrypted password of the user found.
-                    bcrypt.compare(req.param('password'), user.password, function (err, valid) {
-                        if (err) {
-                            return ErrorService.sendError(400, err, req, res);
-                        }
-                        //console.log(user);
-                        // If the password from the form doesn't match the password from the database...
-                        if (!valid) {
-                            return ErrorService.sendError(400, "Email ou mot de passe invalide", req, res);
-                        }
-
-                        var jsonToken = JSON.stringify({
-                            id: user.id,
-                            type: user.type,
-                            school: user.school,
-                            hash: TokenService.issueToken(user)
-                        });
-
-                        return res.json({
-                            token: jsonToken
-                        });
-                    });
                 });
         }
     },
