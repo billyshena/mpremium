@@ -29,15 +29,6 @@ module.exports = {
           defaultsTo: false
       },
 
-      // The 4 latest digits of the credit card
-      lastCardNumber : {
-          type:'string'
-      },
-
-      type_card : {
-          type:'string'
-      },
-
       newsletter : {
           type:'boolean'
       },
@@ -49,6 +40,11 @@ module.exports = {
       sales:{
           collection: 'sale',
           via: 'client'
+      },
+
+      cards : {
+          collection: 'card',
+          via:'client'
       }
 
   }

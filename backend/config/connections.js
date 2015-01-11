@@ -1,5 +1,6 @@
 /**
  * Connections
+ * (sails.config.connections)
  *
  * `Connections` are like "saved settings" for your adapters.  What's the difference between
  * a connection and an adapter, you might ask?  An adapter (e.g. `sails-mysql`) is generic--
@@ -15,40 +16,89 @@
  * (this is to prevent you inadvertently sensitive credentials up to your repository.)
  *
  * For more information on configuration, check out:
- * http://links.sailsjs.org/docs/config/connections
+ * http://sailsjs.org/#/documentation/reference/sails.config/sails.config.connections.html
  */
 
 module.exports.connections = {
-
     mysql: {
         module : 'sails-mysql',
         host      : 'localhost',
-        port      : 8889,
+        port      : 3306,
         user      : 'root',
-        password  : 'root',
+        password  : '2590',
         database  : 'mpremium',
         charset   : 'utf8',
         collation : 'utf8_swedish_ci'
     },
 
-    redis: {
-        adapter: 'sails-redis',
-        host: process.env.REDIS_HOST || 'localhost',
-        port: process.env.REDIS_PORT || 6379,
-        db: process.env.REDIS_DB || '',
-        pass: process.env.REDIS_PASS || null,
 
-        options: {
 
-            // low-level configuration
-            // (redis driver options)
-            parser: 'hiredis',
-            auth_pass: process.env.REDIS_PASS,
-            no_ready_check: true
-        }
-    }
+  /***************************************************************************
+  *                                                                          *
+  * Local disk storage for DEVELOPMENT ONLY                                  *
+  *                                                                          *
+  * Installed by default.                                                    *
+  *                                                                          *
+  ***************************************************************************/
+  localDiskDb: {
+    adapter: 'sails-disk'
+  },
+
+  /***************************************************************************
+  *                                                                          *
+  * MySQL is the world's most popular relational database.                   *
+  * http://en.wikipedia.org/wiki/MySQL                                       *
+  *                                                                          *
+  * Run: npm install sails-mysql                                             *
+  *                                                                          *
+  ***************************************************************************/
+  someMysqlServer: {
+    adapter: 'sails-mysql',
+    host: 'localhost',
+    user: 'root',
+    password: '2590',
+    database: 'apifrontend'
+  },
+
+  /***************************************************************************
+  *                                                                          *
+  * MongoDB is the leading NoSQL database.                                   *
+  * http://en.wikipedia.org/wiki/MongoDB                                     *
+  *                                                                          *
+  * Run: npm install sails-mongo                                             *
+  *                                                                          *
+  ***************************************************************************/
+  someMongodbServer: {
+    adapter: 'sails-mongo',
+    host: 'localhost',
+    port: 27017,
+    // user: 'username',
+    // password: 'password',
+    // database: 'your_mongo_db_name_here'
+  },
+
+  /***************************************************************************
+  *                                                                          *
+  * PostgreSQL is another officially supported relational database.          *
+  * http://en.wikipedia.org/wiki/PostgreSQL                                  *
+  *                                                                          *
+  * Run: npm install sails-postgresql                                        *
+  *                                                                          *
+  *                                                                          *
+  ***************************************************************************/
+  somePostgresqlServer: {
+    adapter: 'sails-postgresql',
+    host: 'YOUR_POSTGRES_SERVER_HOSTNAME_OR_IP_ADDRESS',
+    user: 'YOUR_POSTGRES_USER',
+    password: 'YOUR_POSTGRES_PASSWORD',
+    database: 'YOUR_POSTGRES_DB'
+  }
+
+
+  /***************************************************************************
+  *                                                                          *
+  * More adapters: https://github.com/balderdashy/sails                      *
+  *                                                                          *
+  ***************************************************************************/
+
 };
-
-
-
-

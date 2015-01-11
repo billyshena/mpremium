@@ -22,6 +22,10 @@ module.exports = {
 
       client : {
           model : 'client'
+      },
+
+      payment : {
+          model: 'payment'
       }
 
 
