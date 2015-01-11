@@ -1,6 +1,7 @@
 .idea/*
 backend/coverage/*
 backend/node_modules/*
+backend/config/connections.js
 frontend/src/vendors/*
 frontend/node_modules/*
 frontend/grunt/*
