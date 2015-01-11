@@ -18,9 +18,18 @@ angular.module('app')
     ]
   )
   .config(
-    [          '$stateProvider', '$urlRouterProvider',
-      function ($stateProvider,   $urlRouterProvider) {
-          
+    [          '$stateProvider', '$urlRouterProvider', '$httpProvider', '$sailsSocketProvider',
+      function ($stateProvider,   $urlRouterProvider, $httpProvider, $sailsSocketProvider) {
+
+          $httpProvider.defaults.useXDomain = true;
+          delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
+          $httpProvider.interceptors.push('AuthInterceptor');
+          $sailsSocketProvider.interceptors.push('AuthInterceptor');
+
+
+
+
           $urlRouterProvider
               .otherwise('/app/dashboard');
           $stateProvider
@@ -31,13 +40,17 @@ angular.module('app')
               })
               .state('app.dashboard', {
                   url: '/dashboard',
-                  templateUrl: 'tpl/app_dashboard_v1.html',
+                  templateUrl: appConfig.assetsUrl + 'tpl/app_dashboard_v1.html',
                   authenticate: true
               })
               .state('login', {
                   url: '/login',
                   templateUrl: appConfig.assetsUrl + 'tpl/page_signin.html',
                   authenticate: false
+              })
+              .state('payment', {
+                  url: '/payment',
+                  templateUrl: appConfig.assetsUrl + 'tpl/payment.html'
               })
 
       }

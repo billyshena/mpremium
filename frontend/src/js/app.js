@@ -15,5 +15,8 @@ angular.module('app', [
     'sails.io',
     'app.services.storage',
     'app.services.logger',
+    'angularPayments',
+    'app.controllers.payment',
+    'app.interceptors.auth',
     'pascalprecht.translate'
 ]);
