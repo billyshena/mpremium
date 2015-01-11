@@ -13,33 +13,30 @@ module.exports = {
           type:'email'
       },
 
-      password: {
-          type: 'string'
-      },
-
       banned : {
           type:'boolean',
           defaultsTo: false
       },
 
       newsletter : {
-          type:'boolean'
+          type:'boolean',
+          defaultsTo: false
       },
 
       expired_key_mail : {
-          type:'boolean'
+          type:'boolean',
+          defaultsTo: true
       },
 
-      sales:{
+      sales: {
           collection: 'sale',
           via: 'client'
       },
 
-      cards : {
+      cards: {
           collection: 'card',
-          via:'clients'
+          via: 'clients'
       }
-
   }
 };
 

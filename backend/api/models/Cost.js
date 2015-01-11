@@ -8,24 +8,25 @@
 module.exports = {
 
   attributes: {
+
       entitled : {
-          type:'string'
+          type: 'string'
       },
 
       price : {
-          type:'string'
+          type: 'string'
       },
 
       date : {
-          type:'date'
+          type: 'date'
       },
 
       description : {
-          type:'string'
+          type: 'string'
       },
 
       client:{
-          model:'client'
+          model: 'client'
       }
 
   }

@@ -8,12 +8,14 @@
 module.exports = {
 
   attributes: {
+
       date : {
           type:'datetime'
       },
 
-      activited:{
-          type:'string'
+      activated:{
+          type: 'boolean',
+          defaultsTo: false
       },
 
       product : {
@@ -22,10 +24,6 @@ module.exports = {
 
       client : {
           model : 'client'
-      },
-
-      payment : {
-          model: 'payment'
       }
 
 

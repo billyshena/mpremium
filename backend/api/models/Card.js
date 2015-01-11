@@ -9,26 +9,21 @@ module.exports = {
 
   attributes: {
 
-      clients : {
+      clients: {
           collection : "client",
           via : "cards"
       },
 
-      lastCreditCardNumbers : {
+      last4: {
           type:'string'
       },
 
-      brand : {
+      brand: {
           type : 'string'
       },
 
-      country : {
+      country: {
           type : 'string'
-      },
-
-      payments : {
-          collection : 'payment',
-          via : 'card'
       }
   }
 };

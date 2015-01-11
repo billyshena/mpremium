@@ -8,6 +8,7 @@
 module.exports = {
 
   attributes: {
+
     products : {
         collection : 'product',
         via : 'selling_price'

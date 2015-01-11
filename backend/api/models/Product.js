@@ -21,9 +21,6 @@ module.exports = {
           type:'string'
       },
 
-      selling_price : {
-          model:'sellingPrice'
-      },
 
       sale : {
           type:'boolean'
@@ -42,12 +39,13 @@ module.exports = {
           model:'rescuestock'
       },
 
-      stock : {
-          model:'stock'
-      },
 
       provider : {
           model : 'provider'
+      },
+
+      selling_price: {
+          model: 'sellingprice'
       }
   }
 };
