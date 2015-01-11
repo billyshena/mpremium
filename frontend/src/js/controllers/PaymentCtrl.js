@@ -14,8 +14,15 @@ angular.module('app.controllers.payment', []).controller('PaymentCtrl', [
                 $sailsSocket
                     .post(appConfig.appUrl + '/payment/pay', {
                         stripeToken: response.id,
-                        currency: r
+                        email: 'billy.shen@noos.fr',
+                        product: 1,
+                        card: response.card
                     })
+                    .then(function(response){
+                        console.log(response);
+                    }, function(err){
+                        console.log(err);
+                    });
             }
         }
 
