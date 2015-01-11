@@ -22,10 +22,6 @@ module.exports = {
           type : 'string'
       },
 
-      funding : {
-          type : 'string'
-      },
-
       country : {
           type : 'string'
       },
