@@ -26,13 +26,7 @@ angular.module('app')
               })
               .state('app.dashboard-v1', {
                   url: '/dashboard-v1',
-                  templateUrl: 'tpl/app_dashboard_v1.html',
-                  resolve: {
-                    deps: ['$ocLazyLoad',
-                      function( $ocLazyLoad ){
-                        return $ocLazyLoad.load(['js/controllers/chart.js']);
-                    }]
-                  }
+                  templateUrl: 'tpl/app_dashboard_v1.html'
               })
               .state('app.dashboard-v2', {
                   url: '/dashboard-v2',

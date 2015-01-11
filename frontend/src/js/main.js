@@ -36,22 +36,8 @@ angular.module('app')
           asideDock: false,
           container: false
         }
-      }
+      };
 
-      // save settings to local storage
-      if ( angular.isDefined($localStorage.settings) ) {
-        $scope.app.settings = $localStorage.settings;
-      } else {
-        $localStorage.settings = $scope.app.settings;
-      }
-      $scope.$watch('app.settings', function(){
-        if( $scope.app.settings.asideDock  &&  $scope.app.settings.asideFixed ){
-          // aside dock and fixed must set the header fixed.
-          $scope.app.settings.headerFixed = true;
-        }
-        // save to local storage
-        $localStorage.settings = $scope.app.settings;
-      }, true);
 
       // angular translate
       $scope.lang = { isopen: false };
