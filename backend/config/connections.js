@@ -21,6 +21,17 @@
 
 module.exports.connections = {
 
+    mysql: {
+        module : 'sails-mysql',
+        host      : 'localhost',
+        port      : 3306,
+        user      : 'root',
+        password  : '2590',
+        database  : 'mpremium',
+        charset   : 'utf8',
+        collation : 'utf8_swedish_ci'
+    },
+
   /***************************************************************************
   *                                                                          *
   * Local disk storage for DEVELOPMENT ONLY                                  *
