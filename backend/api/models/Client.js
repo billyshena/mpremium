@@ -20,6 +20,10 @@ module.exports = {
           type:'email'
       },
 
+      password: {
+          type: 'string'
+      },
+
       banned : {
           type:'boolean',
           defaultsTo: false
