@@ -8,6 +8,44 @@
 module.exports = {
 
   attributes: {
+      firstName : {
+          type:'string'
+      },
+
+      lastName : {
+          type:'string'
+      },
+
+      email : {
+          type:'email'
+      },
+
+      banned : {
+          type:'boolean',
+          defaultsTo: false
+      },
+
+      // The 4 latest digits of the credit card
+      lastCardNumber : {
+          type:'string'
+      },
+
+      type_card : {
+          type:'string'
+      },
+
+      newsletter : {
+          type:'boolean'
+      },
+
+      expired_key_mail : {
+          type:'boolean'
+      },
+
+      sales:{
+          collection: 'sale',
+          via: 'client'
+      }
 
   }
 };

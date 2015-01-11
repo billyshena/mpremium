@@ -9,6 +9,14 @@ module.exports = {
 
   attributes: {
 
+      amount : {
+          type:'string'
+      },
+
+      provider:{
+          model:'provider'
+      }
+
   }
 };
 

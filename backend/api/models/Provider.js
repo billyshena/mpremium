@@ -8,7 +8,18 @@
 module.exports = {
 
   attributes: {
+      name : {
+          type:'string'
+      },
 
+      credit : {
+          model:'credit'
+      },
+
+      products : {
+          collection : 'product',
+          via : 'provider'
+      }
   }
 };
 

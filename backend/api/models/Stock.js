@@ -8,6 +8,14 @@
 module.exports = {
 
   attributes: {
+      product : {
+          model:'product'
+      },
+
+      provider : {
+          model:'provider'
+      }
+
 
   }
 };
