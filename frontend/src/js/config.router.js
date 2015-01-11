@@ -41,7 +41,7 @@ angular.module('app')
               .state('app.dashboard', {
                   url: '/dashboard',
                   templateUrl: appConfig.assetsUrl + 'tpl/app_dashboard_v1.html',
-                  authenticate: true
+                  authenticate: false
               })
               .state('login', {
                   url: '/login',

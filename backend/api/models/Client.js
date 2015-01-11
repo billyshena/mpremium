@@ -8,13 +8,6 @@
 module.exports = {
 
   attributes: {
-      firstName : {
-          type:'string'
-      },
-
-      lastName : {
-          type:'string'
-      },
 
       email : {
           type:'email'
@@ -44,7 +37,7 @@ module.exports = {
 
       cards : {
           collection: 'card',
-          via:'client'
+          via:'clients'
       }
 
   }

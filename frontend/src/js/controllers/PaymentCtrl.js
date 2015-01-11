@@ -7,9 +7,9 @@ angular.module('app.controllers.payment', []).controller('PaymentCtrl', [
     function($scope, Logger, $sailsSocket, Auth, $state) {
 
         var token = '';
-        console.log('PaymentCtrl fired');
 
         $scope.handleStripe = function(status, response){
+            console.log(response);
             if(response.error) {
                 // there was an error. Fix it.
             } else {

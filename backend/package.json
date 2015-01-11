@@ -8,7 +8,7 @@
         "sails": "0.10.5",
         "sails-disk": "~0.10.0",
         "sails-postgresql": "0.10.8",
-        "sails-mysql": "0.9.6",
+        "sails-mysql": "0.10.9",
         "skipper-s3": "",
         "aws-sdk": "",
         "grunt-contrib-clean": "",
@@ -34,6 +34,7 @@
         "hiredis": "",
         "jsonwebtoken": "",
         "skipper": "^0.1.6",
+        "stripe": "3.0.3",
         "imagemagick": "",
         "lodash": ""
     },

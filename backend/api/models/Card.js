@@ -11,7 +11,7 @@ module.exports = {
 
       clients : {
           collection : "client",
-          via : "card"
+          via : "cards"
       },
 
       lastCreditCardNumbers : {
