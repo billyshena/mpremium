@@ -22,7 +22,7 @@ module.exports = {
       },
 
       selling_price : {
-          type:'string'
+          model:'sellingPrice'
       },
 
       sale : {
