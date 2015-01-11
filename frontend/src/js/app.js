@@ -10,6 +10,10 @@ angular.module('app', [
     'ngStorage',
     'ui.router',
     'ui.bootstrap',
+    'app.services.auth',
     'ui.load',
+    'sails.io',
+    'app.services.storage',
+    'app.services.logger',
     'pascalprecht.translate'
 ]);
