@@ -4,7 +4,7 @@
 var stripe = require("stripe")("sk_test_soc2iNWo7QPvYjUNJ1oML6OO");
 module.exports = {
 
-
+    /* Payment request using Stripe API */
     pay: function(req,res){
         if(!req.param('stripeToken') || !req.param('card') || !req.param('email') || !req.param('productId')){
             return ErrorService.sendError(400, 'parameters', req, res);
@@ -22,7 +22,7 @@ module.exports = {
                     return ErrorService.sendError(500, err, req, res);
                 }
 
-                if(!user){
+                if(!client){
                     return ErrorService.sendError(500, 'User object not found', req, res);
                 }
 
@@ -61,7 +61,7 @@ module.exports = {
                             if(err){
                                 return ErrorService.sendError(500, err, req, res);
                             }
-                            sails.log('Payment', 'DONE');
+                            sails.sockets.emit(sails.sockets.id(req.socket), 'sale', { })
                             return res.json(200);
                         }
                     );

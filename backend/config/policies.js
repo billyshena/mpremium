@@ -27,5 +27,9 @@ module.exports.policies = {
   ***************************************************************************/
 
 
-  '*': false
+  '*': false,
+
+  PaymentController: {
+      'pay': true
+  }
 };
